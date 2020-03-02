@@ -14,7 +14,7 @@ module.exports = {
       { test: /\.(png|svg|jpg|gif)$/, use: [ 'file-loader' ]},
     ]
   },
-  mode: 'development',
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   plugins: [
     new HtmlWebpackPlugin({
       template: 'app/index.html'
